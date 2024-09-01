@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+import Sidebar from './builder/Sidebar';
+import Canvas from './builder/Canvas';
+import SettingsPanel from './settings/SettingsPanel';
+import FullScreenModal from './modal/FullScreenModal';
 
-function App() {
+
+const App = () => {
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleSelectItem = (item) => {
+    setSelectedItem(item);
+    setIsModalOpen(true); 
+  };
+
+  const handleUpdateSettings = (newProps) => {
+    if (selectedItem && selectedItem.updateContentItem) {
+      selectedItem.updateContentItem(selectedItem.index, newProps);
+    }
+    setSelectedItem(null);
+    setIsModalOpen(false);
+  };
+
+  const closeModal = () => {
+    setSelectedItem(null);
+    setIsModalOpen(false); 
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DndProvider backend={HTML5Backend}>
+      <div style={{ display: 'flex' }}>
+        <Sidebar />
+        <Canvas onSelectItem={handleSelectItem} />
+        <FullScreenModal isOpen={isModalOpen} onClose={closeModal}>
+        <SettingsPanel selectedItem={selectedItem} updateSettings={handleUpdateSettings} />
+
+        </FullScreenModal>
+      </div>
+    </DndProvider>
   );
-}
+};
 
 export default App;
