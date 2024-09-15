@@ -118,7 +118,7 @@ export default MyApp;
   
 ## Support buymeacoffee
 
-[buymeacoffee](buymeacoffee.com/kahramantue)
+[buymeacoffee](https://buymeacoffee.com/kahramantue)
 
 ## Demo Application
 
@@ -136,7 +136,7 @@ export default MyApp;
 
 ## Support buymeacoffee
 
-[buymeacoffee](buymeacoffee.com/kahramantue)
+[buymeacoffee](https://buymeacoffee.com/kahramantue)
 
 ## Lisans
 
