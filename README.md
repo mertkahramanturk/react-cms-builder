@@ -115,7 +115,7 @@ export default MyApp;
 - props: Contains the properties of the component (e.g., text, src, alt, alignment...).
 ## Demo Application
 
-![app]([https://sehrimbu.com/images/11.png](https://github.com/mertkahramanturk/react-cms-builder/blob/master/11.png?raw=true))
+![app](https://github.com/mertkahramanturk/react-cms-builder/blob/be37d0ad60e378826cc3ad1dce101e515ce33c68/11.png)
 
 ## Lisans
 
