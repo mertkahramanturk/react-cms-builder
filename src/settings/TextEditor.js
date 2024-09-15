@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef } from "react";
+import React, { useCallback, useMemo, useRef } from "react";
 import QuillEditor, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 

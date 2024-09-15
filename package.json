@@ -1,6 +1,6 @@
 {
   "name": "react-cms-builder",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "description": "A ReactJS CMS library for building HTML content dynamically.",
   "files": [

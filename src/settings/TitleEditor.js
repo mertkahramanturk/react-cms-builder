@@ -1,11 +1,9 @@
-import { useCallback, useMemo, useRef } from "react";
+import React, { useCallback, useMemo, useRef } from "react";
 import QuillEditor, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-// Özelleştirilmiş font size değerlerini ekliyoruz
 const CustomSizes = ['16px', '18px', '20px', '22px', '24px', '26px', '30px', '36px', '40px'];
 
-// Quill'e özel font size'ları ve başlık seviyelerini kaydediyoruz
 const Size = Quill.import('formats/size');
 Size.whitelist = CustomSizes;
 Quill.register(Size, true);
@@ -39,8 +37,8 @@ const TitleEditor = ({ onChange, value }) => {
     () => ({
       toolbar: {
         container: [
-          [{ header: [1, 2, 3, 4, 5, 6, false] }],  // Başlık seviyeleri menüsü
-          [{ size: CustomSizes.map((size) => `${size}`) }],  // Font size menüsü
+          [{ header: [1, 2, 3, 4, 5, 6, false] }], 
+          [{ size: CustomSizes.map((size) => `${size}`) }], 
           [{ color: [] }],
           ["bold", "italic", "underline", "blockquote"],
           [
@@ -64,8 +62,8 @@ const TitleEditor = ({ onChange, value }) => {
   );
 
   const formats = [
-    "header", // Başlık seviyeleri için format
-    "size",   // Özelleştirilmiş boyutlar için format
+    "header",
+    "size",
     "bold",
     "italic",
     "underline",

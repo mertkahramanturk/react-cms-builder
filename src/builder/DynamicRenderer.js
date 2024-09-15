@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DynamicRenderer = ({ data }) => {
+const DynamicRenderer = ({ data=[] }) => {
   
   const renderComponent = (item) => {
     switch (item.type) {

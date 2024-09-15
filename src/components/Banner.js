@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Banner = ({ appearance, minHeight, backgroundColor, backgroundImage, backgroundPosition, backgroundSize, messageText, alignment }) => {
-    console.log(minHeight)
   const bannerStyle = {
     display: 'flex',
     alignItems: 'center',

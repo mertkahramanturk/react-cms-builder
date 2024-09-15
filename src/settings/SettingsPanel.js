@@ -18,7 +18,6 @@ const SettingsPanel = ({ selectedItem, updateSettings, onClose }) => {
 
   if (!selectedItem) return null;
 
-  console.log(selectedItem)
   const saveSettings = () => {
     if (selectedItem && selectedItem.updateContentItem) {
       selectedItem.updateContentItem(selectedItem.index, props);
