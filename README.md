@@ -115,13 +115,8 @@ export default MyApp;
 - props: Contains the properties of the component (e.g., text, src, alt, alignment...).
 ## Demo Application
 
-![Uygulama Ekran Görüntüsü](https://sehrimbu.com/images/11.png)
-  ![Uygulama Ekran Görüntüsü](https://sehrimbu.com/images/77.png)
-  ![Uygulama Ekran Görüntüsü](https://sehrimbu.com/images/22.png)
- ![Uygulama Ekran Görüntüsü](https://sehrimbu.com/images/33.png)
- ![Uygulama Ekran Görüntüsü](https://sehrimbu.com/images/44.png)
-  ![Uygulama Ekran Görüntüsü](https://sehrimbu.com/images/55.png)
-  ![Uygulama Ekran Görüntüsü](https://sehrimbu.com/images/66.png)
+![app](https://sehrimbu.com/images/11.png "")
+
 ## Lisans
 
 License
