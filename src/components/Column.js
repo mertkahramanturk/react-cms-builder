@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useDrop } from 'react-dnd';
 import DraggableComponent from './DraggableComponent';
 
-const Column = ({ width = 12, onSelectItem, setContent, ...props }) => {
+const Column = ({ width = 12, onSelectItem, setContent, column, key, ...props }) => {
   const [content, setLocalContent] = useState([]);
 
   useEffect(() => {
@@ -53,7 +53,7 @@ const Column = ({ width = 12, onSelectItem, setContent, ...props }) => {
       className='column-root'
     >
       <div className='column-component'>
-        <span className='column-component-title'>Column </span>
+        <span className='column-component-title' onClick={() => onSelectItem({ ...column,  key, updateContentItem })}>Column </span>
       </div>
       {content.map((item, index) => (
         <div className="column-element">

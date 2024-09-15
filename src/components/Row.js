@@ -4,7 +4,7 @@ import { useDrop } from 'react-dnd';
 import Column from './Column';
 
 const Row = ({ onSelectItem, getRowDataFromRow }) => {
-  const [columns, setColumns] = useState([{ id: Date.now(), width: 12, content: [] }]);
+  const [columns, setColumns] = useState([{ id: Date.now(), content: [], type: 'column' }]);
 
   const [{ isOver }, drop] = useDrop({
     accept: 'column',
@@ -22,16 +22,16 @@ const Row = ({ onSelectItem, getRowDataFromRow }) => {
   const addColumnToRow = () => {
     const newColumn = {
       id: Date.now(),
-      width: 12,
       content: [],
+      type: 'column'
     };
     setColumns((prevColumns) => [...prevColumns, newColumn]);
   };
- 
+
   const getRowData = useCallback(() => {
     return columns.map((column) => ({
       id: column.id,
-      width: column.width,
+      type: column.type,
       content: column.content.map((item) => ({
         type: item.type,
         props: item.props,
@@ -55,22 +55,23 @@ const Row = ({ onSelectItem, getRowDataFromRow }) => {
       className='row-root bordered bordered-large'
     >
       <div className='row-component'>
-        <span className='row-component-title'>Row </span>
+        <span className='row-component-title'>Container </span>
       </div>
       {columns.map((column, index) => (
         <>
-        <Column
-          key={index}
-          width={column?.width}
-          onSelectItem={onSelectItem}
-          setContent={(newContent) => updateColumnsData(column.id, newContent)}
-          content={column.content}
-        />
-           
+          <Column
+            key={column.id}
+            width={column?.width}
+            onSelectItem={onSelectItem}
+            setContent={(newContent) => updateColumnsData(column.id, newContent)}
+            content={column.content}
+            column={column}
+          />
+
         </>
-        
+
       ))}
-     
+
     </div>
   );
 };

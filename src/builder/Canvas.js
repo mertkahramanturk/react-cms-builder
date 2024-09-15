@@ -1,37 +1,48 @@
 import React, { useState } from 'react';
+import { useDrop } from 'react-dnd';
 import Row from '../components/Row';
 
-const Canvas = ({ onSelectItem }) => {
-  const [rows, setRows] = useState([{ id: 1 }]);
-  const [rowData, setRowData] = useState([]);
+const Canvas = ({ onSelectItem, handleSave }) => {
+  const [rows, setRows] = useState([{id: Date.now(), type: 'container'}]);
 
-  const getRowDataFromRow = (id, data) => {
-    setRowData((prevData) => ({
-      ...prevData,
-      [id]: data
-    }));
-  };
-  const exportToJson = () => {
-    const allRows = Object.values(rowData);
-    const jsonOutput = JSON.stringify(allRows);
-    console.log(jsonOutput);
-  };
+  const [{ isOver }, drop] = useDrop({
+    accept: ['container'],
+    drop: (item) => addRow(), 
+    collect: (monitor) => ({
+      isOver: !!monitor.isOver(),
+    }),
+  });
 
   const addRow = () => {
-    const newRow = { id: rows.length + 1, columns: [{ id: 1, width: 12, content: [] }] };
-    setRows([...rows, newRow]);
+    const newRow = { id: Date.now(), type: 'container'};
+    setRows((prevRows) => [...prevRows, newRow]);
+  };
+
+  const getRowDataFromRow = (id, data) => {
+    setRows((prevRows) =>
+      prevRows.map((row) => (row.id === id ? { ...row, data } : row))
+    );
+  };
+
+  const exportToJson = () => {
+    const jsonOutput = JSON.stringify(rows);
+    if (handleSave) {
+      handleSave(jsonOutput);
+    } else {
+      console.log(jsonOutput);
+    }
   };
 
   return (
-    <div style={{ padding: '10px', backgroundColor: '#f0f0f0', minHeight: '500px', width: '100%' }}>
+    <div ref={drop} style={{ padding: '10px', backgroundColor: isOver ? '#cce7ff' : '#ececec', minHeight: '100%', width: '100%' }}>
       {rows.map((row, index) => (
         <Row
           key={index}
           onSelectItem={onSelectItem}
           getRowDataFromRow={(data) => getRowDataFromRow(row.id, data)}
-        />))}
+        />
+      ))}
       <div className='button-container'>
-        <button onClick={addRow}>Add Row</button>
         <button onClick={exportToJson}>Save as JSON</button>
       </div>
     </div>

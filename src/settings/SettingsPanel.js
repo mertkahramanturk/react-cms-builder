@@ -18,6 +18,7 @@ const SettingsPanel = ({ selectedItem, updateSettings, onClose }) => {
 
   if (!selectedItem) return null;
 
+  console.log(selectedItem)
   const saveSettings = () => {
     if (selectedItem && selectedItem.updateContentItem) {
       selectedItem.updateContentItem(selectedItem.index, props);
@@ -42,6 +43,8 @@ const SettingsPanel = ({ selectedItem, updateSettings, onClose }) => {
         return <ButtonSettings props={props} setProps={setProps} />;
       case 'banner':
         return <BannerSettings props={props} setProps={setProps} />;
+      case 'column':
+        return <div> "ASFASFASFA"</div>;
       default:
         return null;
     }

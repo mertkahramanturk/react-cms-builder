@@ -1,0 +1,20 @@
+.renderer-root {
+  margin-bottom: 20px;
+}
+
+.renderer-columns {
+  display: flex;
+}
+
+.renderer-root {
+  flex: 1;
+}
+
+button {
+  margin: 5px 0;
+}
+
+img {
+  max-width: 100%;
+  margin: 5px 0;
+}

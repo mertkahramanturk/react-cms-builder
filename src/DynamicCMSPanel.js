@@ -7,13 +7,13 @@ import SettingsPanel from './settings/SettingsPanel';
 import FullScreenModal from './modal/FullScreenModal';
 import './index.css'
 
-const App = () => {
+const DynamicCMSPanel = ({handleSave}) => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSelectItem = (item) => {
     setSelectedItem(item);
-    setIsModalOpen(true); 
+    setIsModalOpen(true);
   };
 
   const handleUpdateSettings = (newProps) => {
@@ -26,20 +26,20 @@ const App = () => {
 
   const closeModal = () => {
     setSelectedItem(null);
-    setIsModalOpen(false); 
+    setIsModalOpen(false);
   };
 
   return (
     <DndProvider backend={HTML5Backend}>
       <div style={{ display: 'flex' }}>
         <Sidebar />
-        <Canvas onSelectItem={handleSelectItem} />
+        <Canvas onSelectItem={handleSelectItem} handleSave={handleSave}/>
         <FullScreenModal isOpen={isModalOpen} onClose={closeModal}>
-        <SettingsPanel selectedItem={selectedItem} updateSettings={handleUpdateSettings} onClose={closeModal}/>
+          <SettingsPanel selectedItem={selectedItem} updateSettings={handleUpdateSettings} onClose={closeModal} />
         </FullScreenModal>
       </div>
     </DndProvider>
   );
 };
 
-export default App;
+export default DynamicCMSPanel;

@@ -6,6 +6,8 @@
 @import url('sidebar.css');
 @import url('./ql.css');
 @import url('./canvas.css');
+@import url('./dynamicRenderer.css');
+@import url('./fullScreenModal.css');
 
 /* Settings */
 

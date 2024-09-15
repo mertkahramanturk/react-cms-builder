@@ -1,70 +1,134 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React CMS - DynamicCMSPanel
 
-## Available Scripts
+DynamicCMSPanel is a flexible drag-and-drop content management system (CMS) for React applications. It allows users to dynamically build HTML content with customizable components like text, title, paragraph, images, banner, videos, buttons, and more.
 
-In the project directory, you can run:
+## Installation
+To install this package, run the following command:
 
-### `npm start`
+```javascript
+npm install react-cms-builder
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+```
+import React from 'react';
+import { DynamicCMSPanel } from 'react-cms-builder';
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+const handleSave = (data) => {
+  console.log('Saved JSON:', data);
+  // You can send the JSON to a server or store it in localStorage here
+};
 
-### `npm run build`
+const MyApp = () => (
+  <div>
+    <h1>Dynamic CMS</h1>
+    <DynamicCMSPanel handleSave={handleSave} />
+  </div>
+);
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+export default MyApp;
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Components Overview
+DynamicCMSPanel provides the following components, which can be dragged from the sidebar and dropped into the canvas to build a page:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Container: Main container that can hold multiple columns.
+- Column: Used to layout components inside a container. You can add multiple columns within a container.
+- Text: A block of text that can be customized with rich text editing features.
+- Image: Add and customize images, with properties like src, alt, and objectFit.
+- Button: Add buttons with customizable styles, onClick actions, and other attributes.
+- Video: Embed videos from YouTube or other sources with options like controls, autoPlay, and borderRadius.
+- Title: Add headings (h1, h2, etc.) to your layout.
+- Paragraph: Add paragraphs with customizable text.
+- Banner: Add banners with customizable text and background images or colors.
 
-### `npm run eject`
+### DynamicCMSPanel props
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Props             | type                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| handleSave | func 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### DynamicCMSRenderer
+To display the data created with DynamicCMSPanel on the screen
+```
+import React from 'react';
+import { DynamicCMSRenderer } from 'react-cms-builder';
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+const MyApp = () => (
+  <div>
+    <h1>Dynamic CMS Render</h1>
+    <DynamicCMSRenderer data={data} />
+  </div>
+);
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+export default MyApp;
+```
 
-## Learn More
+## DynamicCMSRenderer props
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Props             | type                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| data | array |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## JSON Output
 
-### Code Splitting
+```
+[
+  {
+    "id": 1,
+    "type": "container",
+    "data": [
+      {
+        "id": 2,
+        "type": "column",
+        "content": [
+          {
+            "type": "text",
+            "props": {
+              "text": "<p>This is a sample text</p>",
+              "alignment": "center"
+            }
+          },
+          {
+            "type": "image",
+            "props": {
+              "src": "https://via.placeholder.com/150",
+              "alt": "Sample Image",
+              "objectFit": "cover"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
 
-### Analyzing the Bundle Size
+## JSON Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- id: Unique identifier for each component or container.
+- type: Defines the type of the component (container, column, text, image, button, etc.).
+- props: Contains the properties of the component (e.g., text, src, alt, alignment...).
+## Demo Application
 
-### Making a Progressive Web App
+![Uygulama Ekran Görüntüsü](https://sehrimbu.com/images/11.png)
+  ![Uygulama Ekran Görüntüsü](https://sehrimbu.com/images/77.png)
+  ![Uygulama Ekran Görüntüsü](https://sehrimbu.com/images/22.png)
+ ![Uygulama Ekran Görüntüsü](https://sehrimbu.com/images/33.png)
+ ![Uygulama Ekran Görüntüsü](https://sehrimbu.com/images/44.png)
+  ![Uygulama Ekran Görüntüsü](https://sehrimbu.com/images/55.png)
+  ![Uygulama Ekran Görüntüsü](https://sehrimbu.com/images/66.png)
+## Lisans
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+License
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
-### Advanced Configuration
+## Support buymeacoffee
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+buymeacoffee.com/kahramantue
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  

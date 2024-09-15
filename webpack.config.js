@@ -5,7 +5,12 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
-    libraryTarget: 'commonjs2', 
+    library: 'react-cms-builder',
+    libraryTarget: 'umd',
+  },
+  externals: {
+    react: 'react',
+    'react-dom': 'react-dom'
   },
   module: {
     rules: [
@@ -21,17 +26,18 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
+              modules: {
+                auto: true, 
+                localIdentName: '[name]__[local]__[hash:base64:5]',
+              },
               importLoaders: 1,
-              localIdentName: '[name]__[local]__[hash:base64:5]'
-            }
-          }
-        ]
+            },
+          },
+        ],
       }
     ]
   },
-  externals: {
-    react: 'react',
-    'react-dom': 'react-dom'
+  resolve: {
+    extensions: ['.js', '.jsx']
   }
 };
