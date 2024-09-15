@@ -5,8 +5,9 @@ import TextSettings from './TextSettings';
 import TitleSettings from './TitleSettings';
 import ParagraphSettings from './ParagraphSettings';
 import ButtonSettings from './ButtonSettings';
+import BannerSettings from './BannerSettings';
 
-const SettingsPanel = ({ selectedItem, updateSettings }) => {
+const SettingsPanel = ({ selectedItem, updateSettings, onClose }) => {
   const [props, setProps] = useState(selectedItem ? selectedItem.props : {});
 
   useEffect(() => {
@@ -21,10 +22,9 @@ const SettingsPanel = ({ selectedItem, updateSettings }) => {
     if (selectedItem && selectedItem.updateContentItem) {
       selectedItem.updateContentItem(selectedItem.index, props);
     }
-    updateSettings(props); 
+    updateSettings(props);
   };
-  
-  
+
 
   const renderSettings = () => {
     switch (selectedItem.type) {
@@ -40,16 +40,24 @@ const SettingsPanel = ({ selectedItem, updateSettings }) => {
         return <ParagraphSettings props={props} setProps={setProps} />;
       case 'button':
         return <ButtonSettings props={props} setProps={setProps} />;
+      case 'banner':
+        return <BannerSettings props={props} setProps={setProps} />;
       default:
         return null;
     }
   };
 
   return (
-    <div>
-      <h3>Edit {selectedItem.type} Settings</h3>
+    <div className='setting-container'>
+      <div className='setting-header'>
+        <h3>Edit {selectedItem.type} Settings</h3>
+        <div className='setting--button-container'>
+          <button className='setting--cancel-button' onClick={onClose}>Close</button>
+          <button className='setting--save-button' onClick={saveSettings}>Save</button>
+        </div>
+      </div>
+
       {renderSettings()}
-      <button onClick={saveSettings}>Save</button>
     </div>
   );
 };

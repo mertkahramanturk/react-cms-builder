@@ -7,16 +7,16 @@ const ParagraphSettings = ({ props, setProps }) => {
   };
 
   return (
-    <>
-      <label>
-        Content:
+    <div className='setting-root'>
+      <label className='setting-label'>
+     <p> Content: </p>
         <ParagraphComponent 
           content={props.content} 
           onChange={handleContentChange} 
           mode="edit" 
         />
       </label>
-    </>
+    </div>
   );
 };
 

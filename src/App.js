@@ -5,7 +5,7 @@ import Sidebar from './builder/Sidebar';
 import Canvas from './builder/Canvas';
 import SettingsPanel from './settings/SettingsPanel';
 import FullScreenModal from './modal/FullScreenModal';
-
+import './index.css'
 
 const App = () => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -35,7 +35,7 @@ const App = () => {
         <Sidebar />
         <Canvas onSelectItem={handleSelectItem} />
         <FullScreenModal isOpen={isModalOpen} onClose={closeModal}>
-        <SettingsPanel selectedItem={selectedItem} updateSettings={handleUpdateSettings} />
+        <SettingsPanel selectedItem={selectedItem} updateSettings={handleUpdateSettings} onClose={closeModal}/>
 
         </FullScreenModal>
       </div>

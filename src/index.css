@@ -1,0 +1,15 @@
+
+:root {
+  --primary-color: #0091ff;
+  --primary-dark-color: #016bbc;
+  --secondary-color: #f0f0f0;
+  --background-color: #ffffff;
+  --text-white: #ffffff;
+  --text-muted: #868c92;
+  --text-muted-light: #e3e3e3;
+  --text-color: #333333;
+}
+
+  @import url('./assets/styles/styles.css');
+  
+  

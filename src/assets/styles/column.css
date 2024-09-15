@@ -1,0 +1,27 @@
+.column-root{
+  border: 1px solid var(--text-muted);
+  padding: 10px;
+  min-height: 50px;
+  position: relative;
+}
+.column-component{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-top: -1.5rem;
+}
+.column-component-title{
+ font-size: 14px;
+ color: var(---text-color);
+}
+.column-element{
+  position: relative;
+}
+.column-delete--icon{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  color: red;
+}

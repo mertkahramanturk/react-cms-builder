@@ -1,0 +1,59 @@
+.quill{
+}
+.ql-toolbar{
+  border-radius: 5px;
+}
+.ql-snow .ql-picker-options{
+  display: block !important;
+  z-index: 1001;
+  max-height: 100px;
+  overflow-y: scroll;
+}
+
+.ql-container {
+  margin-top: 7rem !important;
+  border-top: 1px solid #ccc !important;
+  border-radius: 5px;
+}
+.ql-editor{
+  min-height: 200px;
+}
+.ql-snow .ql-picker-options .ql-picker-item{
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+
+.ql-snow .ql-picker.ql-size .ql-picker-label::before {
+  content: attr(data-value);
+  text-transform: none;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item::before {
+  content: attr(data-value);
+  text-transform: none;
+}
+.ql-size-18px{
+  font-size: 18px;
+}
+.ql-size-20px{
+  font-size: 20px;
+}
+.ql-size-22px{
+  font-size: 22px;
+}
+.ql-size-24px{
+  font-size: 24px;
+}
+.ql-size-26px{
+  font-size: 26px;
+}
+.ql-size-30px{
+  font-size: 30px;
+}
+.ql-size-36px{
+  font-size: 36px;
+}
+.ql-size-40px{
+  font-size: 40px;
+}

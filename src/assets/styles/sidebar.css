@@ -1,0 +1,16 @@
+.sidebar-root{
+  border-right: 1px solid #ccc; 
+  background-color: #1c1d1f;
+  height: 100vh;
+}
+.sidebar-item{
+ border-bottom: 1px solid #707070;
+ cursor: pointer;
+ padding: 12px 24px 12px 24px;
+ color: #ffffff;
+ font-size: 14px;
+ transition: all 0.5s;
+}
+.sidebar-item:hover{
+  background-color: #2e3033;
+}

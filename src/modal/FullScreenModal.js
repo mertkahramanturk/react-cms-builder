@@ -7,7 +7,7 @@ const FullScreenModal = ({ isOpen, onClose, children }) => {
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
-        <button onClick={onClose} className={styles.closeButton}>X</button>
+        {/* <button onClick={onClose} className={styles.closeButton}>X</button> */}
         {children}
       </div>
     </div>

@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Title = ({ level, text }) => {
-  const Tag = `h${level}`;
-
-  return <Tag>{text}</Tag>;
+const TextComponent = ({ text, classNames = '', alignment = 'left' }) => {
+  return (
+    <div
+    className={classNames}
+    style={{textAlign: alignment, wordBreak :'break-word'}}
+    dangerouslySetInnerHTML={{ __html: text }} 
+    />
+  );
 };
 
-export default Title;
+export default React.memo(TextComponent);

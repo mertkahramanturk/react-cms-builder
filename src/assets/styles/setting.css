@@ -1,0 +1,152 @@
+/* Buttons Settings CSS */
+
+.setting-root{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 1560px;
+  margin: auto;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.setting-header{
+  max-width: 1560px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--text-muted-light);
+  border-radius: 5px;
+  padding: 0px 24px 0px 24px;
+  margin-bottom: 24px;
+}
+.setting-label{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.setting-label p{
+  width: 200px;
+}
+.setting--button-container{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.setting--save-button{
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  border: none;
+  padding: 6px 36px 6px 36px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.setting--save-button:hover{
+  background-color: var(--primary-dark-color);
+  color: var(--text-white);
+  border: none;
+  padding: 6px 36px 6px 36px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.setting--cancel-button{
+  background-color: transparent;
+  color: #000000;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.setting--cancel-button:hover{
+  background-color: transparent;
+  color: #000000;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"],
+input[type="color"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  transition: border-color 0.3s ease;
+  max-width: 500px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="url"]:focus,
+input[type="color"]:focus,
+select:focus {
+  border-color: var(--primary-color); 
+  outline: none;
+}
+
+
+input[type="submit"], button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 6px 36px 6px 36px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+.input[type="submit"], button:hover{
+  background-color: var(--primary-dark-color);
+  color: var(--text-white);
+}
+
+
+input[type="color"] {
+  -webkit-appearance: none;
+  border: none;
+  padding: 0;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: transparent;
+  width: 150px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+
+input[type="color"]:focus {
+  border: 2px solid var(--primary-color); 
+}
+
+
+@media screen and (max-width: 600px) {
+  input[type="text"],
+  input[type="number"],
+  input[type="url"],
+  input[type="color"],
+  select {
+    width: 100%;
+  }
+}
