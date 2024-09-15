@@ -113,6 +113,13 @@ export default MyApp;
 - id: Unique identifier for each component or container.
 - type: Defines the type of the component (container, column, text, image, button, etc.).
 - props: Contains the properties of the component (e.g., text, src, alt, alignment...).
+
+
+  
+## Support buymeacoffee
+
+[buymeacoffee](buymeacoffee.com/kahramantue)
+
 ## Demo Application
 
 ![app](https://github.com/mertkahramanturk/react-shopping-basic-app/blob/98c1102fbf6858374d8e28e85f43971d79174e3c/11.png)
@@ -123,13 +130,18 @@ export default MyApp;
 ![app](https://github.com/mertkahramanturk/react-shopping-basic-app/blob/98c1102fbf6858374d8e28e85f43971d79174e3c/55.png)
 ![app](https://github.com/mertkahramanturk/react-shopping-basic-app/blob/98c1102fbf6858374d8e28e85f43971d79174e3c/66.png)
 
+
+## Related Projects
+[react-dnd](https://www.npmjs.com/package/react-dnd)
+
+## Support buymeacoffee
+
+[buymeacoffee](buymeacoffee.com/kahramantue)
+
 ## Lisans
 
 License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-## Support buymeacoffee
-
-buymeacoffee.com/kahramantue
 
   
