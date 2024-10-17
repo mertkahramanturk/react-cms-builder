@@ -4,7 +4,7 @@ import { useDrop } from 'react-dnd';
 import DraggableComponent from './DraggableComponent';
 
 const Column = ({ width = 12, onSelectItem, setContent, column, key, ...props }) => {
-  const [content, setLocalContent] = useState([]);
+  const [content, setLocalContent] = useState(column.content || []);
 
   useEffect(() => {
     setContent(content);

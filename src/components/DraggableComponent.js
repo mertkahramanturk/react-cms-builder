@@ -9,6 +9,9 @@ import ButtonComponent from './Button';
 import BannerComponent from './Banner'
 import RowComponent from './Row';
 import ColumnComponent from './Column';
+import SvgDeleteOutline from '../assets/icons/Delete';
+import SvgEdit from '../assets/icons/Edit';
+import SvgDragIndicator from '../assets/icons/Drag';
 
 const DraggableComponent = ({ item, index, moveItem, onSelectItem, updateContentItem, removeItem }) => {
   const ref = React.useRef(null);
@@ -63,7 +66,7 @@ const DraggableComponent = ({ item, index, moveItem, onSelectItem, updateContent
                     removeItem(index);
                   }}
                 >
-                  Trash
+                  <SvgDeleteOutline  fill="#000" width="25px" height="25px" />
                 </span>
               </div>
               <div className="toolbar-element">
@@ -74,7 +77,7 @@ const DraggableComponent = ({ item, index, moveItem, onSelectItem, updateContent
                     onSelectItem({ ...item, index, updateContentItem })
                   }}
                 >
-                  Edit
+                  <SvgEdit  fill="#000" width="25px" height="25px" />
                 </span>
               </div>
               <div className="toolbar-element">
@@ -84,7 +87,7 @@ const DraggableComponent = ({ item, index, moveItem, onSelectItem, updateContent
                     e.stopPropagation();
                   }}
                 >
-                  Move
+                  <SvgDragIndicator fill="#000" width="25px" height="25px" />
                 </span>
               </div>
             </div>

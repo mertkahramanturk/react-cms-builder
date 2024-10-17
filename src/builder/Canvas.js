@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { useDrop } from 'react-dnd';
-import Row from '../components/Row';
+import React, { useState } from "react";
+import { useDrop } from "react-dnd";
+import Row from "../components/Row";
 
-const Canvas = ({ onSelectItem, handleSave }) => {
-  const [rows, setRows] = useState([{id: Date.now(), type: 'container'}]);
+const Canvas = ({ onSelectItem, handleSave, data }) => {
+  const [rows, setRows] = useState(data || [{ id: Date.now(), content: [], type: 'column' }]);
 
   const [{ isOver }, drop] = useDrop({
-    accept: ['container'],
-    drop: (item) => addRow(), 
+    accept: ["container"],
+    drop: (item) => addRow(),
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
   });
 
   const addRow = () => {
-    const newRow = { id: Date.now(), type: 'container'};
+    const newRow = { id: Date.now(), type: "container" };
     setRows((prevRows) => [...prevRows, newRow]);
   };
 
@@ -34,15 +34,25 @@ const Canvas = ({ onSelectItem, handleSave }) => {
   };
 
   return (
-    <div ref={drop} style={{ padding: '10px', backgroundColor: isOver ? '#cce7ff' : '#ececec', minHeight: '100%', width: '100%' }}>
+    <div
+      ref={drop}
+      style={{
+        padding: "10px",
+        backgroundColor: isOver ? "#cce7ff" : "#ececec",
+        minHeight: "100%",
+        width: "100%",
+      }}
+    >
+			{console.log(rows)}
       {rows.map((row, index) => (
         <Row
           key={index}
+					row={row}
           onSelectItem={onSelectItem}
           getRowDataFromRow={(data) => getRowDataFromRow(row.id, data)}
         />
       ))}
-      <div className='button-container'>
+      <div className="button-container">
         <button onClick={exportToJson}>Save as JSON</button>
       </div>
     </div>

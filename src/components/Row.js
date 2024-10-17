@@ -3,8 +3,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useDrop } from 'react-dnd';
 import Column from './Column';
 
-const Row = ({ onSelectItem, getRowDataFromRow }) => {
-  const [columns, setColumns] = useState([{ id: Date.now(), content: [], type: 'column' }]);
+const Row = ({ onSelectItem, getRowDataFromRow, row }) => {
+  const [columns, setColumns] = useState(row.data || [{ id: Date.now(), content: [], type: 'column' }]);
 
   const [{ isOver }, drop] = useDrop({
     accept: 'column',
@@ -13,7 +13,6 @@ const Row = ({ onSelectItem, getRowDataFromRow }) => {
       isOver: !!monitor.isOver(),
     }),
   });
-
 
   useEffect(() => {
     getRowDataFromRow(getRowData());

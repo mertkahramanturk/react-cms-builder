@@ -3,9 +3,8 @@
   background-color: var(--text-white);
   border-radius: 5px;
   width: fit-content;
-  min-width: 200px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border: 1px solid var(--text-muted);
   position: absolute;
@@ -15,15 +14,16 @@
 }
 
 .toolbar-wrapper {
-  padding: 6px;
+  padding: px;
   display: flex;
   gap: 8px;
+
 }
 
 .toolbar-element {
-  border: 1px solid var(--text-muted);
-  border-radius: 5px;
-  padding: 6px;
+	border-right: 1px solid var(--text-muted);
+  border-radius: 0px;
+  padding: 6px 24px;
   cursor: pointer;
 }
 

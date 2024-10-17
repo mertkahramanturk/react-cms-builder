@@ -32,6 +32,95 @@ const MyApp = () => (
 export default MyApp;
 ```
 
+## Editable Content
+```
+If you have previously saved data, you can send props as data. After that, you can perform editing operations on it.
+Sample Data
+
+const data = [
+  {
+    id: 1729145639972,
+    type: "container",
+    data: [
+      {
+        id: 1729145639973,
+        type: "column",
+        content: [
+          {
+            type: "title",
+            props: {
+              level: 1,
+              text: "<p>Click here to edit<strong> this title!</strong></p>",
+              alignment: "center",
+              classNames: "custom-title",
+            },
+          },
+        ],
+      },
+      {
+        id: 1729145655752,
+        type: "column",
+        content: [
+          {
+            type: "button",
+            props: {
+              text: "Edit Button Text",
+              backgroundColor: "#b80000",
+              borderRadius: "20",
+              alignment: "center",
+            },
+          },
+          {
+            type: "paragraph",
+            props: { content: "<p>Click here to edit this paragraph</p>" },
+          },
+          {
+            type: "text",
+            props: {
+              text: '<p>Click here<strong style="color: rgb(153, 51, 255);"> to edit this textaasdsd</strong></p>',
+            },
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 1729145740140,
+    type: "container",
+    data: [
+      {
+        id: 1729145740141,
+        type: "column",
+        content: [
+          {
+            type: "image",
+            props: {
+              src: "https://sehrimbu.com/images/places_image_two-1723977907871-932935019.jpeg",
+              alt: "test",
+              objectFit: "fill",
+              borderRadius: "20",
+              classNames: "custom-image",
+            },
+          },
+        ],
+      },
+      {
+        id: 1729145801028,
+        type: "column",
+        content: [
+          {
+            type: "paragraph",
+            props: { content: "Click here to edit this paragraph" },
+          },
+        ],
+      },
+    ],
+  },
+];
+
+ <DynamicCMSPanel handleSave={handleSave} data={data} />
+```
+
 ## Components Overview
 DynamicCMSPanel provides the following components, which can be dragged from the sidebar and dropped into the canvas to build a page:
 
