@@ -22,7 +22,7 @@ const Sidebar = () => {
     <div  className='sidebar-root'>
       <SidebarItem type="container" label="Container" props={{id: Date.now(), type: 'container'}} />
       <SidebarItem type="column" label="Column" props={{id: Date.now(), content: [], type: 'column' }} />
-      <SidebarItem type="image" label="Image" props={{ src: 'https://via.placeholder.com/250', alt: 'Placeholder Image' }} />
+      <SidebarItem type="image" label="Image" props={{ src: 'https://fakeimg.pl/600x400?text=CLICK+ME!', alt: 'Placeholder Image' }} />
       <SidebarItem type="video" label="Video" props={{ src: 'youtube url paste here!', controls: true }} />
       <SidebarItem type="text" label="Text" props={{ text: 'Click here to edit this text' }} />
       <SidebarItem type="title" label="Title" props={{ level: 1, text: 'Click here to edit this title!' }} />

@@ -184,7 +184,7 @@ export default MyApp;
           {
             "type": "image",
             "props": {
-              "src": "https://via.placeholder.com/150",
+              "src": "https://fakeimg.pl/600x400?text=CLICK+ME!",
               "alt": "Sample Image",
               "objectFit": "cover"
             }
