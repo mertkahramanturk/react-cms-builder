@@ -35,10 +35,11 @@ const VideoSettings = ({ props, setProps }) => {
       <label className='setting-label'>
         <p>Border Radius:</p>
         <input
-          type="number"
+          type="text"
           value={props.borderRadius || 0}
           onChange={(e) => setProps({ ...props, borderRadius: e.target.value })}
-        />px
+					placeholder="Example value: 20px (please read a (px, rem, em...)"
+        />
       </label>
     </div>
   );

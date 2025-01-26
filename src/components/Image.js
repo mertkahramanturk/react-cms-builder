@@ -1,6 +1,7 @@
 import React from 'react';
 
-const ImageComponent = ({ src, alt, objectFit = 'fill', objectPosition = 'center', borderRadius = 0, classNames = '' }) => {
+const ImageComponent = ({ src, alt, objectFit = 'fill', objectPosition = 'center', borderRadius = 0, classNames = '', width = '100%' }) => {
+
   return (
     <img
       src={src}
@@ -10,7 +11,8 @@ const ImageComponent = ({ src, alt, objectFit = 'fill', objectPosition = 'center
         maxWidth: '100%',
         objectFit: objectFit,
         objectPosition: objectPosition,
-        borderRadius: `${borderRadius}px` 
+        borderRadius: `${borderRadius}px`,
+				width: `${width}%`
       }}
     />
   );

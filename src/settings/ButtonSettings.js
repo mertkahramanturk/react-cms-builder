@@ -36,19 +36,21 @@ const ButtonSettings = ({ props, setProps }) => {
       />
     </label>
         <label className='setting-label'>
-      <p>Border Radius (px):</p>
+      <p>Border Radius:</p>
       <input
-        type="number"
-        value={props.borderRadius || 0}
+        type="text"
+        value={props.borderRadius}
         onChange={(e) => setProps({ ...props, borderRadius: e.target.value })}
+				placeholder="Example value: 10px (please read a (px, rem, em...)"
       />
     </label>
         <label className='setting-label'>
-      <p>Font Size (px): </p>
+      <p>Font Size: </p>
       <input
-        type="number"
-        value={props.fontSize || 16}
+        type="text"
+        value={props.fontSize}
         onChange={(e) => setProps({ ...props, fontSize: e.target.value })}
+				placeholder="Example value: 16px (please read a (px, rem, em...)"
       />
     </label>
         <label className='setting-label'>

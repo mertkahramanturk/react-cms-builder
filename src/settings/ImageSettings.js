@@ -50,11 +50,20 @@ const ImageSettings = ({ props, setProps }) => (
     <label className='setting-label'>
     <p>Border Radius: </p>
       <input
-        type="number"
-        value={props.borderRadius || 0}
+        type="text"
+        value={props.borderRadius}
         onChange={(e) => setProps({ ...props, borderRadius: e.target.value })}
-        placeholder="0"
-      />px
+        placeholder="Example value: 10px (please read a (px, rem, em...)"
+      />
+    </label>
+    <label className='setting-label'>
+    <p>Width: </p>
+      <input
+        type="text"
+        value={props.width}
+        onChange={(e) => setProps({ ...props, width: e.target.value })}
+        placeholder="Example value: 100% (please read a (%,px...)"
+      />
     </label>
 
     <label className='setting-label'>

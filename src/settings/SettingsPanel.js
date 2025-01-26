@@ -6,10 +6,10 @@ import TitleSettings from './TitleSettings';
 import ParagraphSettings from './ParagraphSettings';
 import ButtonSettings from './ButtonSettings';
 import BannerSettings from './BannerSettings';
+import ColumnSettings from './ColumnSettings';
 
 const SettingsPanel = ({ selectedItem, updateSettings, onClose }) => {
   const [props, setProps] = useState(selectedItem ? selectedItem.props : {});
-
   useEffect(() => {
     if (selectedItem) {
       setProps(selectedItem.props);
@@ -18,13 +18,12 @@ const SettingsPanel = ({ selectedItem, updateSettings, onClose }) => {
 
   if (!selectedItem) return null;
 
-  const saveSettings = () => {
-    if (selectedItem && selectedItem.updateContentItem) {
-      selectedItem.updateContentItem(selectedItem.index, props);
-    }
-    updateSettings(props);
-  };
-
+	const saveSettings = () => {
+		if (selectedItem && selectedItem.updateContentItem) {
+			selectedItem.updateContentItem(null, props); 
+		}
+		updateSettings(props);
+	};
 
   const renderSettings = () => {
     switch (selectedItem.type) {
@@ -43,7 +42,7 @@ const SettingsPanel = ({ selectedItem, updateSettings, onClose }) => {
       case 'banner':
         return <BannerSettings props={props} setProps={setProps} />;
       case 'column':
-        return <div> "ASFASFASFA"</div>;
+        return <ColumnSettings props={props} setProps={setProps} />;
       default:
         return null;
     }

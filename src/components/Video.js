@@ -41,7 +41,7 @@ const VideoComponent = ({ src, title = 'Video', classNames = '', borderRadius = 
               style={{
                 width: '100%',
                 height: '315px',
-                borderRadius: `${borderRadius}px`,
+                borderRadius: `${borderRadius}`,
               }}
               tabIndex="0"
               data-element="video"

@@ -5,15 +5,19 @@
   position: relative;
 }
 .column-component{
+	gap: 12px;
+	display: flex;
+	align-items: center;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translate(-50%, 0);
-  margin-top: -1.5rem;
+  margin-top: -2rem;
 }
 .column-component-title{
  font-size: 14px;
  color: var(---text-color);
+ cursor: pointer;
 }
 .column-element{
   position: relative;
@@ -24,4 +28,7 @@
   right: 5px;
   cursor: pointer;
   color: red;
+}
+.delete-icon{
+	cursor: pointer;
 }

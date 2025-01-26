@@ -28,8 +28,8 @@ const Button = ({ type = 'primary', text, backgroundColor, borderRadius, fontSiz
   const buttonStyle = {
     ...getButtonStyle(type).default,
     ...(isHovered ? getButtonStyle(type).hover : {}),
-    borderRadius: borderRadius ? `${borderRadius}px` : '4px',
-    fontSize: fontSize ? `${fontSize}px` : '16px',
+    borderRadius: borderRadius ? `${borderRadius}` : '4px',
+    fontSize: fontSize ? `${fontSize}` : '16px',
     padding: '10px 20px',
     cursor: 'pointer',
     textDecoration: 'none',
