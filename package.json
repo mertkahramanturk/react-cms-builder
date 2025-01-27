@@ -1,6 +1,6 @@
 {
   "name": "react-cms-builder",
-  "version": "3.0.1",
+  "version": "3.0.3",
   "main": "dist/index.js",
   "description": "A ReactJS CMS library for building HTML content dynamically.",
   "files": [
@@ -14,8 +14,8 @@
     "web-vitals": "^4.2.3"
   },
   "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0|| ^19.0.0"
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "scripts": {
     "start": "react-scripts start", 
