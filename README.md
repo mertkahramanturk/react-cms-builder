@@ -66,7 +66,7 @@ const data = [
             props: {
               text: "Edit Button Text",
               backgroundColor: "#b80000",
-              borderRadius: "20",
+              borderRadius: "20px",
               alignment: "center",
             },
           },
@@ -98,7 +98,7 @@ const data = [
               src: "https://sehrimbu.com/images/places_image_two-1723977907871-932935019.jpeg",
               alt: "test",
               objectFit: "fill",
-              borderRadius: "20",
+              borderRadius: "20px",
               classNames: "custom-image",
             },
           },
@@ -138,7 +138,8 @@ DynamicCMSPanel provides the following components, which can be dragged from the
 
 | Props             | type                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| handleSave | func 
+| handleSave | func |
+| data | array |
 
 ### DynamicCMSRenderer
 To display the data created with DynamicCMSPanel on the screen
